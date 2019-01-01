@@ -1,7 +1,4 @@
 ﻿@model IEnumerable<DesarrolloWebMVC_Pelicula.Web.Models.Pelicula>
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -33,11 +30,11 @@
                 <td>@pelicula.No_Actores</td>
                 <td>@pelicula.Duracion</td>
                 <td>@pelicula.Estreno</td>
-                <td><a href="/Home/Baja?cod=@pelicula.Codigo">borra?</a></td>
+                <td><a href="/Home/Borrar?cod=@pelicula.Codigo">borra?</a></td>
                 <td><a href="/Home/Modificacion?cod=@pelicula.Codigo">modifica?</a></td>
             </tr>
         }
     </table>
-    <a href="/Home/Alta">Agregar</a>
+    <a href="/Home/Grabar">Agregar</a>
 </body>
 </html>

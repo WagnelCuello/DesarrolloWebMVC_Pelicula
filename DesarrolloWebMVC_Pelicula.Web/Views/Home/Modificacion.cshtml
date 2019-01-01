@@ -8,10 +8,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Modificacion</title>
+    <title>Grabar Registros</title>
 </head>
 <body>
     <div> 
+        <form action="/Home/Modificar" method="post">
+            <h1>Registro de Peliculas</h1>
+            <table class="auto-style1">
+                <tr><td>Codigo</td><td><input type="text" name="Codigo" readonly/></td></tr>
+                <tr><td>Titulo</td><td><input type="text" name="Titulo" /></td></tr>
+                <tr><td>Director</td><td><input type="text" name="Director" /></td></tr>
+                <tr><td>Autor Principal</td><td><input type="text" name="AutorPrincipal" /></td></tr>
+                <tr><td>Actores</td><td><input type="text" name="No_Actores" /></td></tr>
+                <tr><td>Duracion</td><td><input type="text" name="Duracion" /></td></tr>
+                <tr><td>Estreno</td><td><input type="text" name="Esteno" /></td></tr>
+                <tr><td class="auto-style1"></td><td><input type="submit" value="Confirmar" /></td></tr>
+            </table>
+        </form>
     </div>
 </body>
 </html>
