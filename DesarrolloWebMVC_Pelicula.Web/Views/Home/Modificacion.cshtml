@@ -1,7 +1,4 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model DesarrolloWebMVC_Pelicula.Web.Models.Pelicula
 
 <!DOCTYPE html>
 
@@ -12,16 +9,16 @@
 </head>
 <body>
     <div> 
-        <form action="/Home/Modificar" method="post">
+        <form action="/Home/Modificacion" method="post">
             <h1>Registro de Peliculas</h1>
             <table class="auto-style1">
-                <tr><td>Codigo</td><td><input type="text" name="Codigo" readonly/></td></tr>
-                <tr><td>Titulo</td><td><input type="text" name="Titulo" /></td></tr>
-                <tr><td>Director</td><td><input type="text" name="Director" /></td></tr>
-                <tr><td>Autor Principal</td><td><input type="text" name="AutorPrincipal" /></td></tr>
-                <tr><td>Actores</td><td><input type="text" name="No_Actores" /></td></tr>
-                <tr><td>Duracion</td><td><input type="text" name="Duracion" /></td></tr>
-                <tr><td>Estreno</td><td><input type="text" name="Esteno" /></td></tr>
+                <tr><td>Codigo</td><td><input type="text" name="Codigo" value="@Model.Codigo" readonly/></td></tr>
+                <tr><td>Titulo</td><td><input type="text" name="Titulo" value="@Model.Titulo" /></td></tr>
+                <tr><td>Director</td><td><input type="text" name="Director" value="@Model.Director" /></td></tr>
+                <tr><td>Autor Principal</td><td><input type="text" name="AutorPrincipal" value="@Model.AutorPrincipal" /></td></tr>
+                <tr><td>Actores</td><td><input type="text" name="No_Actores" value="@Model.No_Actores" /></td></tr>
+                <tr><td>Duracion</td><td><input type="text" name="Duracion" value="@Model.Duracion" /></td></tr>
+                <tr><td>Estreno</td><td><input type="text" name="Esteno" value="@Model.Estreno" /></td></tr>
                 <tr><td class="auto-style1"></td><td><input type="submit" value="Confirmar" /></td></tr>
             </table>
         </form>

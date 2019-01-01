@@ -104,6 +104,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
             Pelicula pelicula = new Pelicula();
             if (registros.Read())
             {
+                pelicula.Codigo = int.Parse(registros["Codigo"].ToString());
                 pelicula.Titulo = registros["Titulo"].ToString();
                 pelicula.Director = registros["Director"].ToString();
                 pelicula.AutorPrincipal = registros["AutorPrincipal"].ToString();
