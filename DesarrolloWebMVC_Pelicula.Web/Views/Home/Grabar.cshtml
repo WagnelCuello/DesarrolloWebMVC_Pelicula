@@ -7,13 +7,21 @@
     <body>
         <div>
             <form action="/Home/Grabar" method="post">
-                <h1>Registro de Peliculas</h1>
+                <h1>Registro de Productos</h1>
                 <table class="auto-style1">
                     <tr>
                         <td>Codigo</td>
                         <td><input type="text" name="Codigo" readonly /></td>
                     </tr>
                     <tr>
+                        <td>Descripci&oacute;n</td>
+                        <td><input type="text" name="Descripcion" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td>Precio</td>
+                        <td><input type="text" name="Precio" value="" /></td>
+                    </tr>
+                    @*<tr>
                         <td>Titulo</td>
                         <td><input type="text" name="Titulo" /></td>
                     </tr>
@@ -36,7 +44,7 @@
                     <tr>
                         <td>Estreno</td>
                         <td><input type="text" name="Estreno" /></td>
-                    </tr>
+                    </tr>*@
                     <tr>
                         <td class="auto-style1"></td>
                         <td><input type="submit" value="Confirmar" /></td>

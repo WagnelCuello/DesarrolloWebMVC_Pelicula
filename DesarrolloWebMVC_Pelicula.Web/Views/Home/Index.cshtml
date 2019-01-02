@@ -1,4 +1,6 @@
-﻿@model IEnumerable<DesarrolloWebMVC_Pelicula.Web.Models.Pelicula>
+﻿@*@model IEnumerable<DesarrolloWebMVC_Pelicula.Web.Models.Pelicula>*@
+
+@model IEnumerable<DesarrolloWebMVC_Pelicula.Web.Models.Producto>
 
 <!DOCTYPE html>
 
@@ -16,9 +18,16 @@
         </tr>
         @foreach (var pelicula in Model)
         {
-
+        <tr>
+            <td>@pelicula.Codigo</td>
+            <td>@pelicula.Descripcion</td>
+            <td>@pelicula.Precio</td>
+            <td><a href="/Home/Borrar?cod=@pelicula.Codigo">borra?</a></td>
+            <td><a href="/Home/Modificacion?cod=@pelicula.Codigo">modifica?</a></td>
+        </tr>
         }
     </table>
+
     @*<table>
         <tr>
             <th>Codigo</th>
@@ -46,6 +55,7 @@
             </tr>
         }
     </table>*@
+
     <a href="/Home/Grabar">Agregar</a>
 </body>
 </html>

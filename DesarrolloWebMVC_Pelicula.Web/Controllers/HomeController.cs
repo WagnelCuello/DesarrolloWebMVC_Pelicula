@@ -12,8 +12,11 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            RegistroPelicula rp = new RegistroPelicula();
+            RegistroProducto rp = new RegistroProducto();
             return View(rp.RecuperarTodos());
+
+            //RegistroPelicula rp = new RegistroPelicula();
+            //return View(rp.RecuperarTodos());
         }
 
         public ActionResult Grabar()
@@ -23,43 +26,18 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
         [HttpPost]
         public ActionResult Grabar(FormCollection coleccion)
         {
-            RegistroPelicula rp = new RegistroPelicula();
-            //Pelicula peli = new Pelicula();
-            Pelicula peli = new Pelicula
+            RegistroProducto rp = new RegistroProducto();
+            Producto prod = new Producto()
             {
-                //Codigo = int.Parse(coleccion["Codigo"]),
-                Titulo = coleccion["Titulo"],
-                AutorPrincipal = coleccion["AutorPrincipal"],
-                Director = coleccion["Director"],
-                No_Actores = int.Parse(coleccion["No_Actores"]),
-                Duracion = float.Parse(coleccion["Duracion"]),
-                Estreno = int.Parse(coleccion["Estreno"])
+                Descripcion = coleccion["Descripcion"],
+                Precio = float.Parse(coleccion["Precio"])
             };
-            //UpdateModel(peli, coleccion);
-            rp.GrabarPelicula(peli);
-            return RedirectToAction("Index");
-        }
+            rp.GrabarProducto(prod);
 
-        public ActionResult Borrar(int cod)
-        {
-            RegistroPelicula peli = new RegistroPelicula();
-            peli.Borrar(cod);
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult Modificacion(int cod)
-        {
-            RegistroPelicula rp = new RegistroPelicula();
-            Pelicula peli = rp.Recuperar(cod);
-            return View(peli);
-        }
-        [HttpPost]
-        public ActionResult Modificacion(FormCollection coleccion)
-        {
-            RegistroPelicula peli = new RegistroPelicula();
-            //Pelicula rpt = new Pelicula
+            //RegistroPelicula rp = new RegistroPelicula();
+            //Pelicula peli = new Pelicula
             //{
-            //    Codigo = int.Parse(coleccion["Codigo"]),
+            //    //Codigo = int.Parse(coleccion["Codigo"]),
             //    Titulo = coleccion["Titulo"],
             //    AutorPrincipal = coleccion["AutorPrincipal"],
             //    Director = coleccion["Director"],
@@ -67,10 +45,56 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
             //    Duracion = float.Parse(coleccion["Duracion"]),
             //    Estreno = int.Parse(coleccion["Estreno"])
             //};
-            var rpt = new Pelicula();
-            UpdateModel<Pelicula>(rpt, coleccion);
+            ////UpdateModel(peli, coleccion);
+            //rp.GrabarPelicula(peli);
 
-            peli.Modificar(rpt);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Borrar(int cod)
+        {
+            RegistroProducto reg = new RegistroProducto();
+            reg.Borrar(cod);
+            //RegistroPelicula peli = new RegistroPelicula();
+            //peli.Borrar(cod);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Modificacion(int cod)
+        {
+            RegistroProducto rp = new RegistroProducto();
+            Producto pro = rp.Recuperar(cod);
+            return View(pro);
+
+            //RegistroPelicula rp = new RegistroPelicula();
+            //Pelicula peli = rp.Recuperar(cod);
+            //return View(peli);
+        }
+        [HttpPost]
+        public ActionResult Modificacion(FormCollection coleccion)
+        {
+            RegistroProducto rp = new RegistroProducto();
+            var rpt = new Producto();
+            UpdateModel(rpt, coleccion);
+
+            rp.Modificar(rpt);
+
+            //RegistroPelicula peli = new RegistroPelicula();
+            ////Pelicula rpt = new Pelicula
+            ////{
+            ////    Codigo = int.Parse(coleccion["Codigo"]),
+            ////    Titulo = coleccion["Titulo"],
+            ////    AutorPrincipal = coleccion["AutorPrincipal"],
+            ////    Director = coleccion["Director"],
+            ////    No_Actores = int.Parse(coleccion["No_Actores"]),
+            ////    Duracion = float.Parse(coleccion["Duracion"]),
+            ////    Estreno = int.Parse(coleccion["Estreno"])
+            ////};
+            //var rpt = new Pelicula();
+            //UpdateModel<Pelicula>(rpt, coleccion);
+
+            //peli.Modificar(rpt);
+
             return RedirectToAction("Index");
         }
     }
