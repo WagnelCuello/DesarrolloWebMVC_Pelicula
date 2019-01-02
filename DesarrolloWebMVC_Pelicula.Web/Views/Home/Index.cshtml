@@ -11,6 +11,17 @@
     <table>
         <tr>
             <th>Codigo</th>
+            <th>Descripci&oacute;n</th>
+            <th>Precio</th>
+        </tr>
+        @foreach (var pelicula in Model)
+        {
+
+        }
+    </table>
+    @*<table>
+        <tr>
+            <th>Codigo</th>
             <th>Titulo</th>
             <th>Director</th>
             <th>Autor Principal</th>
@@ -34,7 +45,7 @@
                 <td><a href="/Home/Modificacion?cod=@pelicula.Codigo">modifica?</a></td>
             </tr>
         }
-    </table>
+    </table>*@
     <a href="/Home/Grabar">Agregar</a>
 </body>
 </html>

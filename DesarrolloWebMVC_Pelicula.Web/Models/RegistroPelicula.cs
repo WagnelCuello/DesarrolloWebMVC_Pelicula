@@ -23,7 +23,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
             try
             {
                 Conectar();
-                SqlCommand comando = new SqlCommand("INSERT INTO TBL_PELICULA (Titulo,Director,AutorPrincipal,No_Actores,Duracion,Estreno)" +
+                SqlCommand comando = new SqlCommand("INSERT INTO TBL_PELICULAS (Titulo,Director,AutorPrincipal,No_Actores,Duracion,Estreno)" +
                                                     "VALUES(@Titulo,@Director,@AutorPrincipal,@No_Actores,@Duracion,@Estreno)", con);
                 comando.Parameters.Add("@Titulo", SqlDbType.VarChar);
                 comando.Parameters.Add("@Director", SqlDbType.VarChar);
@@ -44,7 +44,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
                 con.Close();
                 return i;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw;
             }
@@ -130,7 +130,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
                                                    "AutorPrincipal = @AutorPrincipal," +
                                                    "No_Actores = @No_Actores," +
                                                    "Duracion = @Duracion," +
-                                                   "Estreno = @Estreno" +
+                                                   "Estreno = @Estreno " +
                                              "WHERE Codigo = @Codigo", con);
 
             com.Parameters.Add("@Codigo", SqlDbType.Int);

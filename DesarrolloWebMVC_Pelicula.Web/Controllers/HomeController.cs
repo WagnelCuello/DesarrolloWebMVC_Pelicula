@@ -24,17 +24,18 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
         public ActionResult Grabar(FormCollection coleccion)
         {
             RegistroPelicula rp = new RegistroPelicula();
+            //Pelicula peli = new Pelicula();
             Pelicula peli = new Pelicula
             {
                 //Codigo = int.Parse(coleccion["Codigo"]),
-
                 Titulo = coleccion["Titulo"],
-                Director = coleccion["Director"],
                 AutorPrincipal = coleccion["AutorPrincipal"],
+                Director = coleccion["Director"],
                 No_Actores = int.Parse(coleccion["No_Actores"]),
                 Duracion = float.Parse(coleccion["Duracion"]),
                 Estreno = int.Parse(coleccion["Estreno"])
             };
+            //UpdateModel(peli, coleccion);
             rp.GrabarPelicula(peli);
             return RedirectToAction("Index");
         }
@@ -56,16 +57,19 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
         public ActionResult Modificacion(FormCollection coleccion)
         {
             RegistroPelicula peli = new RegistroPelicula();
-            Pelicula rpt = new Pelicula
-            {
-                Codigo = int.Parse(coleccion["Codigo"]),
-                Titulo = coleccion["Titulo"],
-                AutorPrincipal = coleccion["AutorPrincipal"],
-                Director = coleccion["Director"],
-                No_Actores = int.Parse(coleccion["No_Actores"]),
-                Duracion = float.Parse(coleccion["Duracion"]),
-                Estreno = int.Parse(coleccion["Estreno"])
-            };
+            //Pelicula rpt = new Pelicula
+            //{
+            //    Codigo = int.Parse(coleccion["Codigo"]),
+            //    Titulo = coleccion["Titulo"],
+            //    AutorPrincipal = coleccion["AutorPrincipal"],
+            //    Director = coleccion["Director"],
+            //    No_Actores = int.Parse(coleccion["No_Actores"]),
+            //    Duracion = float.Parse(coleccion["Duracion"]),
+            //    Estreno = int.Parse(coleccion["Estreno"])
+            //};
+            var rpt = new Pelicula();
+            UpdateModel<Pelicula>(rpt, coleccion);
+
             peli.Modificar(rpt);
             return RedirectToAction("Index");
         }
